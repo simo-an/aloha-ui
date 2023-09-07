@@ -6,7 +6,9 @@
   "module": "aloha-ui.js",
   "type": "module",
   "scripts": {
-    "dev": "echo dev"
+    "dev": "pnpm -F=./packages/aloha-components run dev",
+    "build": "pnpm -F=./packages/aloha-components run build",
+    "website": "pnpm -F=./packages/aloha-website run dev"
   },
   "repository": {
     "type": "git",
@@ -25,5 +27,8 @@
     "url": "https://github.com/simo-an/aloha-ui/issues"
   },
   "homepage": "https://github.com/simo-an/aloha-ui#readme",
-  "devDependencies": {}
+  "devDependencies": {
+    "tslib": "^2.6.0",
+    "typescript": "^5.2.2"
+  }
 }

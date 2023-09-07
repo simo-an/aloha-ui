@@ -1,9 +1,16 @@
 import { defineConfig } from "vite";
 import { svelte } from "@sveltejs/vite-plugin-svelte";
+import { resolve } from "node:path";
 
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [svelte()],
+  resolve: {
+    alias: {
+      "@": resolve("./src"),
+      "@utils": resolve("./src/utils"),
+    },
+  },
   build: {
     minify: false,
     lib: {
@@ -12,6 +19,9 @@ export default defineConfig({
     },
     watch: {
       clearScreen: true,
+    },
+    rollupOptions: {
+      external: ["svelte"],
     },
   },
 });

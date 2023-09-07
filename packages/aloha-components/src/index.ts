@@ -1,3 +1,4 @@
-import AButton from "./button/Button.svelte";
+import { AButton } from "./button";
+import { ALabel } from "./label";
 
-export { AButton };
+export { AButton, ALabel };

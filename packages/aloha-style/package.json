@@ -1,0 +1,33 @@
+{
+  "name": "@aloha-ui/style",
+  "version": "0.0.0",
+  "description": "aloha-ui components style",
+  "main": "dist/index.js",
+  "type": "module",
+  "scripts": {
+    "build": "pnpm run build-less && pnpm run build-ts && cp ./package.json ./dist/",
+    "build-less": "lessc ./index.less ./dist/index.css",
+    "build-ts": "tsc index.ts --target esnext --outDir ./dist"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/simo-an/aloha-ui.git"
+  },
+  "keywords": [
+    "web-components",
+    "style",
+    "rtc",
+    "ui",
+    "cross-platform"
+  ],
+  "author": "simu",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/simo-an/aloha-ui/issues"
+  },
+  "homepage": "https://github.com/simo-an/aloha-ui#readme",
+  "devDependencies": {},
+  "dependencies": {
+    "less": "^4.2.0"
+  }
+}

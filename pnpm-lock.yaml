@@ -6,7 +6,14 @@ settings:
 
 importers:
 
-  .: {}
+  .:
+    devDependencies:
+      tslib:
+        specifier: ^2.6.0
+        version: 2.6.0
+      typescript:
+        specifier: ^5.2.2
+        version: 5.2.2
 
   packages/aloha-components:
     dependencies:
@@ -29,11 +36,48 @@ importers:
       svelte-check:
         specifier: ^3.4.6
         version: 3.4.6(less@4.2.0)(svelte@4.0.5)
+      vite:
+        specifier: ^4.4.5
+        version: 4.4.5(less@4.2.0)
+
+  packages/aloha-style:
+    dependencies:
+      less:
+        specifier: ^4.2.0
+        version: 4.2.0
+
+  packages/aloha-style/dist:
+    dependencies:
+      less:
+        specifier: ^4.2.0
+        version: 4.2.0
+
+  packages/aloha-website:
+    dependencies:
+      '@aloha-ui/components':
+        specifier: 'workspace: *'
+        version: link:../aloha-components
+      vite_svelte_comps:
+        specifier: ^0.0.3
+        version: 0.0.3
+    devDependencies:
+      '@sveltejs/vite-plugin-svelte':
+        specifier: ^2.4.2
+        version: 2.4.2(svelte@4.0.5)(vite@4.4.5)
+      '@tsconfig/svelte':
+        specifier: ^5.0.0
+        version: 5.0.0
+      svelte:
+        specifier: ^4.0.5
+        version: 4.0.5
+      svelte-check:
+        specifier: ^3.4.6
+        version: 3.4.6(less@4.2.0)(svelte@4.0.5)
       tslib:
         specifier: ^2.6.0
         version: 2.6.0
       typescript:
-        specifier: ^5.2.2
+        specifier: ^5.0.2
         version: 5.2.2
       vite:
         specifier: ^4.4.5
@@ -636,7 +680,7 @@ packages:
     dev: true
 
   /debug@3.2.7:
-    resolution: {integrity: sha512-CFjzYYAi4ThfiQvizrFQevTTXHtnCqWfe7x1AhgEscTz6ZbLbfoLRLPugTQyBth6f8ZERVUSyWHFD/7Wu4t1XQ==}
+    resolution: {integrity: sha1-clgLfpFF+zm2Z2+cXl+xALk0F5o=}
     requiresBuild: true
     peerDependencies:
       supports-color: '*'
@@ -1514,6 +1558,11 @@ packages:
     optionalDependencies:
       fsevents: 2.3.3
     dev: true
+
+  /vite_svelte_comps@0.0.3:
+    resolution: {integrity: sha512-In51wRWr3NM69dOgANRR0UvaHsmvxN/EDqGp2Ze6hgvS6AZ5kWZ8/kKQVp0xRfcKaEK3MaQKMa5pvEKwze/BQg==}
+    engines: {node: '>= 16'}
+    dev: false
 
   /vitefu@0.2.4(vite@4.4.5):
     resolution: {integrity: sha512-fanAXjSaf9xXtOOeno8wZXIhgia+CZury481LsDaV++lSvcU2R9Ch2bPh3PYFyoHW+w9LqAeYRISVQjUIew14g==}

@@ -1,23 +1,23 @@
-<svelte:options customElement="a-button" />
+<svelte:options customElement="a-label" />
 
 <script lang="ts">
   import { filterClass } from "@utils";
 
-  let nativeType = "button" as const;
-
   export let style = null;
-  export let disabled = false;
   export let circle = false;
+  export let disabled = false;
   export let round = false;
+  export let text = "";
 
   const preClass = ["type", "size", "round", "loading"];
   const _class = [
-    "a-button",
-    ...filterClass($$props, "a-button--", preClass),
+    "a-label",
+    ...filterClass($$props, "a-label--", preClass),
   ].join(" ");
 </script>
 
-<button
+<!-- svelte-ignore a11y-no-static-element-interactions -->
+<span
   class={_class}
   class:is-circle={circle}
   class:is-round={round}
@@ -39,15 +39,11 @@
   on:pointermove
   on:pointerout
   on:pointerup
-  on:input
-  {disabled}
-  type={nativeType}
 >
-  <span>
-    <slot />
-  </span>
-</button>
+  <slot />
+  {text}
+</span>
 
 <style lang="less">
-  @import url("./button.less");
+  @import url("./label.less");
 </style>
